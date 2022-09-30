@@ -12,7 +12,7 @@ const modals = () => {
     
                 modal.style.display = "block";
                 // document.body.style.overflow = "hidden";
-                document.body.classList.add('modal-open')
+                document.body.classList.add('modal-open');
             });
         });
 
