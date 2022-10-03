@@ -21,25 +21,7 @@ const tabs = ({ headerSelector, tabsSelector, contentsSelector, activeClass }) =
     hideTabContent();
     showTabContent();
 
-    window.addEventListener('keydown', (event) => {
-        const target = event.target;
-        if (event.code === 'Enter') {
-            if (target &&
-                (target.classList.contains(tabsSelector.replace(/\./, "")) || 
-            target.parentNode.classList.contains(tabsSelector.replace(/\./, "")))) {
-                tabs.forEach((tab, index) => {
-                    if (target == tab || target.parentNode == tab)
-                    {
-                        hideTabContent();
-                        showTabContent(index);
-                    }
-                });
-            }
-        }
-    });
-
-    header.addEventListener('click', (event) => {
-        const target = event.target;
+    const handleEvent = (target) => {
         if (target &&
             (target.classList.contains(tabsSelector.replace(/\./, "")) || 
         target.parentNode.classList.contains(tabsSelector.replace(/\./, "")))) {
@@ -51,6 +33,18 @@ const tabs = ({ headerSelector, tabsSelector, contentsSelector, activeClass }) =
                 }
             });
         }
+    };
+
+    window.addEventListener('keydown', (event) => {
+        const target = event.target;
+        if (event.code === 'Enter') {
+            handleEvent(target);
+        }
+    });
+
+    header.addEventListener('click', (event) => {
+        const target = event.target;
+        handleEvent(target);
     });
 };
 
