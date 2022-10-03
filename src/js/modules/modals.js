@@ -31,7 +31,7 @@ const modals = () => {
             if (event.code === 'Escape') {
                 closeModal(modal);
             }
-        })
+        });
     }
 
     const showModalByTime = (selector, time) => {
