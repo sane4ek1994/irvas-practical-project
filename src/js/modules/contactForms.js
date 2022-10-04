@@ -1,6 +1,15 @@
 const contactForms = () => {
     const forms = document.querySelectorAll('form'),
-          inputs = document.querySelectorAll('input');
+          inputs = document.querySelectorAll('input'),
+          phoneInputs = document.querySelectorAll('input[name="user_phone"]');
+
+          console.log('work?');
+
+    phoneInputs.forEach(input => {
+        input.addEventListener('input', () => {
+            input.value = input.value.replace(/\D/, '');
+        }); 
+    });
     
     const message = {
         loading: 'Загрузка...',
@@ -10,7 +19,7 @@ const contactForms = () => {
 
     const postData = async (url, data) => {
         document.querySelector('.status').textContent = message.loading;
-        let result = await fetch(url, {
+        const result = await fetch(url, {
             method: 'POST',
             body: data
         });
@@ -28,9 +37,9 @@ const contactForms = () => {
         form.addEventListener('submit', (event) => {
             event.preventDefault();
 
-            let statusMessage = document.createElement('div');
+            const statusMessage = document.createElement('div');
             statusMessage.classList.add('status');
-            form.appendChild(statusMessage);
+            form.append(statusMessage);
 
             const formData = new FormData(form);
             postData('assets/server.php', formData)
