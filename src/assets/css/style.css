@@ -130,6 +130,10 @@ textarea:focus {
   cursor: pointer;
 }
 
+.button:focus {
+  border: 2px solid #0089cd;;
+}
+
 .section_header {
   margin-bottom: 8rem;
   text-align: center;
