@@ -12,7 +12,6 @@ const changeModalState = (state) => {
     
 
     const bindActionsToElems = ({ event, elements, prop }) => {
-        console.log(elements);
         elements.forEach((element, index) => {
             element.addEventListener(event, () => {
                 switch(element.nodeName) {
