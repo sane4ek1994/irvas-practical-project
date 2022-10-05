@@ -12,6 +12,9 @@ const changeModalState = (state) => {
     
 
     const bindActionsToElems = ({ event, elements, prop }) => {
+        const couldValue = state[prop] = 'Холодное',
+              hotValue = state[prop] = 'Теплое';
+
         elements.forEach((element, index) => {
             element.addEventListener(event, () => {
                 switch(element.nodeName) {
@@ -20,7 +23,7 @@ const changeModalState = (state) => {
                         break;
                     case 'INPUT':
                         if (element.getAttribute('type') === 'checkbox') {
-                            index === 0 ? state[prop] = 'Холодное' : state[prop] = 'Теплое';
+                            index === 0 ? couldValue : hotValue;
                             elements.forEach((checkbox, j) => {
                                 checkbox.checked = false;
                                 if (index == j) {

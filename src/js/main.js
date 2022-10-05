@@ -30,5 +30,6 @@ window.addEventListener('DOMContentLoaded', () => {
         activeClass: 'do_image_more',
         display: 'inline-block'
     });
+    
     contactForms(modalState);
 });

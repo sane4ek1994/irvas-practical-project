@@ -1026,7 +1026,8 @@ textarea:focus {
 }
 
 .popup_calc_profile_content .checkbox {
-  display: none;
+  display: block;
+  opacity: 0;
 }
 
 .popup_calc_profile_content .checkbox-custom {
@@ -1051,6 +1052,10 @@ textarea:focus {
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+.checkbox-custom:focus {
+  border : 2px solid red;
 }
 
 .checkbox-custom[id="cold"]::before {
