@@ -29,7 +29,7 @@ const changeModalState = (state) => {
                                 if (index == j) {
                                     checkbox.checked = true;
                                 }
-                            })
+                            });
                         } else {
                             state[prop] = element.value;
                         }

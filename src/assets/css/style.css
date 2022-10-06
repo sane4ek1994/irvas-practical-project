@@ -1054,9 +1054,9 @@ textarea:focus {
   left: 0;
 }
 
-.checkbox-custom:focus {
-  border : 2px solid red;
-}
+.popup_calc_profile_content .checkbox:focus + .checkbox-custom {
+  border : 1px solid #0089cd;
+} 
 
 .checkbox-custom[id="cold"]::before {
   background: url(../img/modal_calc/check.png) center center no-repeat;
