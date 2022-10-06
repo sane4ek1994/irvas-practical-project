@@ -1026,7 +1026,8 @@ textarea:focus {
 }
 
 .popup_calc_profile_content .checkbox {
-  display: none;
+  display: block;
+  opacity: 0;
 }
 
 .popup_calc_profile_content .checkbox-custom {
@@ -1052,6 +1053,10 @@ textarea:focus {
   bottom: 0;
   left: 0;
 }
+
+.popup_calc_profile_content .checkbox:focus + .checkbox-custom {
+  border : 1px solid #0089cd;
+} 
 
 .checkbox-custom[id="cold"]::before {
   background: url(../img/modal_calc/check.png) center center no-repeat;
