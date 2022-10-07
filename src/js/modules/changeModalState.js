@@ -29,7 +29,7 @@ export const changeModalState = (state) => {
                                 if (index == j) {
                                     checkbox.checked = true;
                                 }
-                            })
+                            });
                         } else {
                             state[prop] = element.value;
                         }
@@ -38,8 +38,6 @@ export const changeModalState = (state) => {
                         state[prop] = element.value;
                         break;
                 }
-
-                console.log(state);
             });
         });
     };
