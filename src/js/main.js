@@ -1,9 +1,5 @@
 import './slider';
-import modals from './modules/modals';
-import tabs from './modules/tabs';
-import contactForms from './modules/contactForms';
-import changeModalState from './modules/changeModalState';
-import timer from './modules/timer';
+import { modals, tabs, contactForms, changeModalState, timer } from './modules/index';
 
 window.addEventListener('DOMContentLoaded', () => {
     "use strict";

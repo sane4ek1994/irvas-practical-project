@@ -1,11 +1,11 @@
-import checkNumInputs from "./checkNumInputs";
+import {checkNumInputs} from "./checkNumInputs";
 
-const contactForms = (state) => {
+export const contactForms = (state) => {
     const forms = document.querySelectorAll('form'),
           inputs = document.querySelectorAll('input');
 
     checkNumInputs('input[name="user_phone"]');
-    
+
     const message = {
         loading: 'Загрузка...',
         success: 'Спасибо! Скоро мы свами свяжемся',
@@ -59,5 +59,3 @@ const contactForms = (state) => {
         });
     });
 };
-
-export default contactForms;

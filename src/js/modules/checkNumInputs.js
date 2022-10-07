@@ -1,4 +1,4 @@
-const checkNumInputs = (selector) => {
+export const checkNumInputs = (selector) => {
     const numInputs = document.querySelectorAll(selector);
     numInputs.forEach(input => {
         input.addEventListener('input', () => {
@@ -6,5 +6,3 @@ const checkNumInputs = (selector) => {
         }); 
     });
 };
-
-export default checkNumInputs;
