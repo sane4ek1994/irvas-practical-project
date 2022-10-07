@@ -4,7 +4,8 @@ export const modals = () => {
         const triggers = document.querySelectorAll(triggerSelector),
               modal = document.querySelector(modalSelector),
               close = document.querySelector(closeSelector),
-              windows = document.querySelectorAll('[data-moda]');
+              windows = document.querySelectorAll('[data-moda]'),
+              scroll = killScroll();
 
         triggers.forEach(trigger => {
             trigger.addEventListener('click', (event) => {
@@ -19,6 +20,7 @@ export const modals = () => {
                 modal.style.display = "block";
                 // document.body.style.overflow = "hidden";
                 document.body.classList.add('modal-open');
+                document.body.style.marginRight = `${scroll}px`;
             });
         });
 
@@ -47,6 +49,22 @@ export const modals = () => {
         });
     }
 
+    const killScroll = () => {
+        const div = document.createElement('div');
+        div.style.cssText = `
+            width: 50px;
+            height: 50px;
+            overflow-y: scroll;
+            visibility: hidden;
+        `;
+
+        document.body.append(div);
+        const scrollWidth = div.offsetWidth - div.clientWidth;
+        div.remove();
+
+        return scrollWidth;
+    };
+
     const showModalByTime = (selector, time) => {
         setTimeout(() => {
             document.querySelector(selector).style.display = "block";
@@ -57,6 +75,7 @@ export const modals = () => {
     const closeModal = (modal) => {
         modal.style.display = "none";
         document.body.classList.remove('modal-open');
+        document.body.style.marginRight = `0px`;
     };
 
 
