@@ -3,3 +3,4 @@ export { tabs } from './tabs';
 export { contactForms } from './contactForms';
 export { changeModalState } from './changeModalState';
 export { timer } from './timer';
+export { images } from './images';

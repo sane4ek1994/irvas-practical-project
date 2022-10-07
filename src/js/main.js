@@ -1,5 +1,5 @@
 import './slider';
-import { modals, tabs, contactForms, changeModalState, timer } from './modules/index';
+import { modals, tabs, contactForms, changeModalState, timer, images } from './modules/index';
 
 window.addEventListener('DOMContentLoaded', () => {
     "use strict";
@@ -33,4 +33,5 @@ window.addEventListener('DOMContentLoaded', () => {
         id: '.container1',
         deadline: deadline
     });
+    images();
 });
