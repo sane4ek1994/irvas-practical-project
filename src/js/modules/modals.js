@@ -1,4 +1,4 @@
-const modals = () => {
+export const modals = () => {
     
     function bindModal({ triggerSelector, modalSelector, closeSelector, closeClickOverlay = true }) {
         const triggers = document.querySelectorAll(triggerSelector),
@@ -91,5 +91,3 @@ const modals = () => {
     });
 
 };
-
-export default modals;

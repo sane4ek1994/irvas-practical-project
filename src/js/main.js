@@ -1,13 +1,11 @@
 import './slider';
-import modals from './modules/modals';
-import tabs from './modules/tabs';
-import contactForms from './modules/contactForms';
-import changeModalState from './modules/changeModalState';
+import { modals, tabs, contactForms, changeModalState, timer } from './modules/index';
 
 window.addEventListener('DOMContentLoaded', () => {
     "use strict";
 
     const modalState = {};
+    const deadline = '2022-12-31';
 
     changeModalState(modalState);
     modals();
@@ -30,6 +28,9 @@ window.addEventListener('DOMContentLoaded', () => {
         activeClass: 'do_image_more',
         display: 'inline-block'
     });
-    
     contactForms(modalState);
+    timer({
+        id: '.container1',
+        deadline: deadline
+    });
 });
